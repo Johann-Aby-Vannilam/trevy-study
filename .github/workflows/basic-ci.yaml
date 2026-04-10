@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest 
     steps: 
     - uses: actions/checkout@v3 
-      name: Build image 
+      name: Checkout code
+    - name: Build image 
       run: docker build -t myapp:${{ github.sha }} . 
     - name: Run Trivy 
       uses: aquasecurity/trivy-action@master 
